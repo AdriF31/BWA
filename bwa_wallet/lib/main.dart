@@ -1,4 +1,9 @@
+import 'package:bwa_wallet/ui/pages/onboarding_page.dart';
+import 'package:bwa_wallet/ui/pages/sign_in_page.dart';
+import 'package:bwa_wallet/ui/pages/sign_up_page.dart';
 import 'package:bwa_wallet/ui/pages/splash_screen.dart';
+import 'package:bwa_wallet/ui/pages/upload_pic_page.dart';
+import 'package:bwa_wallet/ui/pages/verify_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,11 +16,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home: const SplashScreen());
+      routes: {
+        '/': (context) => const SplashScreen(),
+        '/onboarding': (context) => const OnBoardingPage(),
+        '/sign-in': (context) => const SignInPage(),
+        '/sign-up': (context) => const SignUpPage(),
+        '/upload-pic': (context) => const UploadPicturePage(),
+        '/verify': (context) => const VerifyPage(),
+      },
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+    );
   }
 }

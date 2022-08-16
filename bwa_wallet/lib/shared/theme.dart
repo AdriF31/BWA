@@ -11,6 +11,7 @@ Color lightBgColor = const Color(0xffF6F8FB);
 Color darkBgColor = const Color(0xff020518);
 Color greenColor = const Color(0xff22B07D);
 Color numberBgColor = const Color(0xff1A1D2E);
+Color lightGreyColor = const Color(0xffF1F1F9);
 // text style
 TextStyle blackTextStyle = GoogleFonts.poppins(color: blackColor);
 TextStyle whiteTextStyle = GoogleFonts.poppins(color: whiteColor);
