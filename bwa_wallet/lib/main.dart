@@ -2,8 +2,8 @@ import 'package:bwa_wallet/ui/pages/onboarding_page.dart';
 import 'package:bwa_wallet/ui/pages/sign_in_page.dart';
 import 'package:bwa_wallet/ui/pages/sign_up_page.dart';
 import 'package:bwa_wallet/ui/pages/splash_screen.dart';
-import 'package:bwa_wallet/ui/pages/upload_pic_page.dart';
-import 'package:bwa_wallet/ui/pages/verify_page.dart';
+import 'package:bwa_wallet/ui/pages/sign_up_set_profile.dart';
+import 'package:bwa_wallet/ui/pages/sign_up_verify_id.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -21,8 +21,8 @@ class MyApp extends StatelessWidget {
         '/onboarding': (context) => const OnBoardingPage(),
         '/sign-in': (context) => const SignInPage(),
         '/sign-up': (context) => const SignUpPage(),
-        '/upload-pic': (context) => const UploadPicturePage(),
-        '/verify': (context) => const VerifyPage(),
+        '/sign-up-set-profile': (context) => const SignUpSetProfile(),
+        '/sign-up-verify-id': (context) => const SignUpVerifyId(),
       },
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',

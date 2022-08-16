@@ -1,11 +1,12 @@
 import 'package:bwa_wallet/shared/theme.dart';
 import 'package:bwa_wallet/ui/widgets/buttons.dart';
+import 'package:bwa_wallet/ui/widgets/circle_image.dart';
 import 'package:bwa_wallet/ui/widgets/forms.dart';
 import 'package:bwa_wallet/ui/widgets/minor.dart';
 import 'package:flutter/material.dart';
 
-class UploadPicturePage extends StatelessWidget {
-  const UploadPicturePage({Key? key}) : super(key: key);
+class SignUpSetProfile extends StatelessWidget {
+  const SignUpSetProfile({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,18 +32,10 @@ class UploadPicturePage extends StatelessWidget {
                 Column(
                   children: [
                     InkWell(
-                      onTap: () {},
-                      child: Container(
-                          width: 120,
-                          height: 120,
-                          decoration: BoxDecoration(
-                              color: lightGreyColor,
-                              shape: BoxShape.circle,
-                              image: const DecorationImage(
-                                scale: 2,
-                                image: AssetImage('assets/ic_upload.png'),
-                              ))),
-                    ),
+                        onTap: () {},
+                        child: const CustomCircleImage(
+                          image: 'assets/ic_upload.png',
+                        )),
                     const SizedBox(
                       height: 16,
                     ),
@@ -68,7 +61,7 @@ class UploadPicturePage extends StatelessWidget {
                 CustomFilledButton(
                   title: 'Continue',
                   onPressed: () {
-                    Navigator.pushNamed(context, '/verify');
+                    Navigator.pushNamed(context, '/sign-up-verify-id');
                   },
                 )
               ],

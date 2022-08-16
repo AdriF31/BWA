@@ -3,8 +3,8 @@ import 'package:bwa_wallet/ui/widgets/buttons.dart';
 import 'package:bwa_wallet/ui/widgets/minor.dart';
 import 'package:flutter/material.dart';
 
-class VerifyPage extends StatelessWidget {
-  const VerifyPage({Key? key}) : super(key: key);
+class SignUpVerifyId extends StatelessWidget {
+  const SignUpVerifyId({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,15 +32,18 @@ class VerifyPage extends StatelessWidget {
                     InkWell(
                       onTap: () {},
                       child: Container(
-                          width: 120,
-                          height: 120,
-                          decoration: BoxDecoration(
-                              color: lightGreyColor,
-                              shape: BoxShape.circle,
-                              image: const DecorationImage(
-                                scale: 2,
-                                image: AssetImage('assets/ic_upload.png'),
-                              ))),
+                        width: 120,
+                        height: 120,
+                        decoration: BoxDecoration(
+                          color: lightGreyColor,
+                          shape: BoxShape.circle,
+                        ),
+                        child: Center(
+                            child: Image.asset(
+                          'assets/ic_upload.png',
+                          width: 32,
+                        )),
+                      ),
                     ),
                     const SizedBox(
                       height: 16,

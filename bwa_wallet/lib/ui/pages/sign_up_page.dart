@@ -52,7 +52,7 @@ class SignUpPage extends StatelessWidget {
                 CustomFilledButton(
                   title: 'Continue',
                   onPressed: () {
-                    Navigator.pushNamed(context, '/upload-pic');
+                    Navigator.pushNamed(context, '/sign-up-set-profile');
                   },
                 )
               ],
