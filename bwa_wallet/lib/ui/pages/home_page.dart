@@ -1,11 +1,27 @@
 import 'package:bwa_wallet/shared/theme.dart';
+import 'package:bwa_wallet/ui/pages/history_page.dart';
+import 'package:bwa_wallet/ui/pages/reward_page.dart';
+import 'package:bwa_wallet/ui/pages/statistic_page.dart';
+import 'package:bwa_wallet/ui/widgets/home_friendly_tips.dart';
 import 'package:bwa_wallet/ui/widgets/home_latest_transaction.dart';
 import 'package:bwa_wallet/ui/widgets/home_service_item.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int _selectedIndex = 0;
+  static const List<Widget> menu = <Widget>[
+    HomePage(),
+    HistoryPage(),
+    StatisticPage(),
+    RewardPage()
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,6 +71,10 @@ class HomePage extends StatelessWidget {
                 ),
                 label: 'Reward'),
           ],
+          currentIndex: _selectedIndex,
+          onTap: (index) {
+            _selectedIndex = index;
+          },
         ),
       ),
       floatingActionButton: FloatingActionButton(
@@ -74,9 +94,8 @@ class HomePage extends StatelessWidget {
           buildLevel(),
           buildServices(),
           buildLatestTransaction(),
-          const SizedBox(
-            height: 20,
-          )
+          buildSendAgain(),
+          buildFriendlyTips(),
         ],
       ),
     );
@@ -102,25 +121,30 @@ class HomePage extends StatelessWidget {
               )
             ],
           ),
-          Container(
-            width: 60,
-            height: 60,
-            decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                image: DecorationImage(
-                    image: AssetImage('assets/img_profile.png'))),
-            child: Align(
-              alignment: Alignment.topRight,
-              child: Container(
-                width: 16,
-                height: 16,
-                decoration:
-                    BoxDecoration(shape: BoxShape.circle, color: whiteColor),
-                child: Center(
-                  child: Icon(
-                    Icons.check_circle,
-                    color: greenColor,
-                    size: 18,
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, '/profile');
+            },
+            child: Container(
+              width: 60,
+              height: 60,
+              decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  image: DecorationImage(
+                      image: AssetImage('assets/img_profile.png'))),
+              child: Align(
+                alignment: Alignment.topRight,
+                child: Container(
+                  width: 16,
+                  height: 16,
+                  decoration:
+                      BoxDecoration(shape: BoxShape.circle, color: whiteColor),
+                  child: Center(
+                    child: Icon(
+                      Icons.check_circle,
+                      color: greenColor,
+                      size: 18,
+                    ),
                   ),
                 ),
               ),
@@ -134,7 +158,7 @@ class HomePage extends StatelessWidget {
   Widget buildWalletCard() {
     return Container(
       margin: const EdgeInsets.only(top: 30),
-      padding: const EdgeInsets.all(30),
+      padding: const EdgeInsets.all(20),
       width: double.infinity,
       height: 220,
       decoration: BoxDecoration(
@@ -149,7 +173,7 @@ class HomePage extends StatelessWidget {
             style: whiteTextStyle.copyWith(fontSize: 18, fontWeight: medium),
           ),
           const SizedBox(
-            height: 28,
+            height: 20,
           ),
           Text(
             '**** **** **** 1280',
@@ -295,5 +319,180 @@ class HomePage extends StatelessWidget {
         )
       ]),
     );
+  }
+
+  Widget buildSendAgain() {
+    return Container(
+      padding: const EdgeInsets.only(top: 30),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Send Again',
+            style: blackTextStyle.copyWith(fontSize: 16, fontWeight: semiBold),
+          ),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                Container(
+                    margin: const EdgeInsets.only(top: 14),
+                    width: 90,
+                    height: 120,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: whiteColor,
+                    ),
+                    child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const CircleAvatar(
+                            backgroundImage:
+                                AssetImage('assets/img_friend1.png'),
+                            radius: 25,
+                          ),
+                          const SizedBox(
+                            height: 13,
+                          ),
+                          Text(
+                            '@Chika',
+                            style: blackTextStyle.copyWith(
+                                fontSize: 12, fontWeight: medium),
+                          )
+                        ])),
+                const SizedBox(
+                  width: 17,
+                ),
+                Container(
+                    margin: const EdgeInsets.only(top: 14),
+                    width: 90,
+                    height: 120,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: whiteColor,
+                    ),
+                    child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const CircleAvatar(
+                            backgroundImage:
+                                AssetImage('assets/img_friend2.png'),
+                            radius: 25,
+                          ),
+                          const SizedBox(
+                            height: 13,
+                          ),
+                          Text(
+                            '@joni',
+                            style: blackTextStyle.copyWith(
+                                fontSize: 12, fontWeight: medium),
+                          )
+                        ])),
+                const SizedBox(
+                  width: 17,
+                ),
+                Container(
+                    margin: const EdgeInsets.only(top: 14),
+                    width: 90,
+                    height: 120,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: whiteColor,
+                    ),
+                    child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const CircleAvatar(
+                            backgroundImage:
+                                AssetImage('assets/img_friend3.png'),
+                            radius: 25,
+                          ),
+                          const SizedBox(
+                            height: 13,
+                          ),
+                          Text(
+                            '@ichi',
+                            style: blackTextStyle.copyWith(
+                                fontSize: 12, fontWeight: medium),
+                          )
+                        ])),
+                const SizedBox(
+                  width: 17,
+                ),
+                Container(
+                    margin: const EdgeInsets.only(top: 14),
+                    width: 90,
+                    height: 120,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: whiteColor,
+                    ),
+                    child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const CircleAvatar(
+                            backgroundImage:
+                                AssetImage('assets/img_friend4.png'),
+                            radius: 25,
+                          ),
+                          const SizedBox(
+                            height: 13,
+                          ),
+                          Text(
+                            '@tengen',
+                            style: blackTextStyle.copyWith(
+                                fontSize: 12, fontWeight: medium),
+                          )
+                        ])),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget buildFriendlyTips() {
+    return Container(
+        padding: const EdgeInsets.only(top: 30, bottom: 50),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Friendly Tips',
+              style:
+                  blackTextStyle.copyWith(fontSize: 16, fontWeight: semiBold),
+            ),
+            Container(
+              margin: const EdgeInsets.only(top: 18),
+              child: Wrap(
+                spacing: 17,
+                runSpacing: 18,
+                children: [
+                  HomeFriendlyTips(
+                    image: 'assets/img_tips1.png',
+                    tips: "Best tips for using a credit card",
+                    url: Uri.parse('https://www.google.com'),
+                  ),
+                  HomeFriendlyTips(
+                    image: 'assets/img_tips2.png',
+                    tips: "Spot the good pie of finance model",
+                    url: Uri.parse('https://www.google.com'),
+                  ),
+                  HomeFriendlyTips(
+                    image: 'assets/img_tips3.png',
+                    tips: "Great hack to get better advices",
+                    url: Uri.parse('https://www.google.com'),
+                  ),
+                  HomeFriendlyTips(
+                    image: 'assets/img_tips4.png',
+                    tips: "Save more penny buy this instead",
+                    url: Uri.parse('https://www.google.com'),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ));
   }
 }

@@ -1,5 +1,6 @@
 import 'package:bwa_wallet/ui/pages/home_page.dart';
 import 'package:bwa_wallet/ui/pages/onboarding_page.dart';
+import 'package:bwa_wallet/ui/pages/profile_page.dart';
 import 'package:bwa_wallet/ui/pages/sign_in_page.dart';
 import 'package:bwa_wallet/ui/pages/sign_up_page.dart';
 import 'package:bwa_wallet/ui/pages/sign_up_success.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         '/sign-up-verify-id': (context) => const SignUpVerifyId(),
         '/sign-up-success': (context) => const SignUpSuccessPage(),
         '/home':(context)=>const HomePage(),
+        '/profile':(context)=>const ProfilePage()
       },
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
