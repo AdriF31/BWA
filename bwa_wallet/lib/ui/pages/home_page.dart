@@ -248,7 +248,9 @@ class _HomePageState extends State<HomePage> {
           HomeServiceItem(
             title: 'Top Up',
             icon: 'assets/ic_topup.png',
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, '/top-up');
+            },
           ),
           HomeServiceItem(
             title: 'Send',

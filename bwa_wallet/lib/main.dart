@@ -1,13 +1,18 @@
 import 'package:bwa_wallet/shared/theme.dart';
+import 'package:bwa_wallet/ui/pages/edit_pin_page.dart';
+import 'package:bwa_wallet/ui/pages/edit_profile_page.dart';
 import 'package:bwa_wallet/ui/pages/home_page.dart';
 import 'package:bwa_wallet/ui/pages/onboarding_page.dart';
+import 'package:bwa_wallet/ui/pages/pin_page.dart';
 import 'package:bwa_wallet/ui/pages/profile_page.dart';
+import 'package:bwa_wallet/ui/pages/profile_update_success_page.dart';
 import 'package:bwa_wallet/ui/pages/sign_in_page.dart';
 import 'package:bwa_wallet/ui/pages/sign_up_page.dart';
 import 'package:bwa_wallet/ui/pages/sign_up_success.dart';
 import 'package:bwa_wallet/ui/pages/splash_screen.dart';
 import 'package:bwa_wallet/ui/pages/sign_up_set_profile.dart';
 import 'package:bwa_wallet/ui/pages/sign_up_verify_id.dart';
+import 'package:bwa_wallet/ui/pages/top_up_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -29,7 +34,12 @@ class MyApp extends StatelessWidget {
         '/sign-up-verify-id': (context) => const SignUpVerifyId(),
         '/sign-up-success': (context) => const SignUpSuccessPage(),
         '/home': (context) => const HomePage(),
-        '/profile': (context) => const ProfilePage()
+        '/profile': (context) => const ProfilePage(),
+        '/pin-page': (context) => const PinPage(),
+        '/edit-profile': (context) => const EditProfilePage(),
+        '/edit-pin': (context) => const EditPinPage(),
+        '/edit-profile-success': (context) => const ProfileEditSuccessPage(),
+        '/top-up': (context) => const TopUpPage(),
       },
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
