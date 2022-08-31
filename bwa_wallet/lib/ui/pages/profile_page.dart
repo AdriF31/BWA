@@ -1,6 +1,5 @@
 import 'package:bwa_wallet/shared/theme.dart';
 import 'package:bwa_wallet/ui/widgets/buttons.dart';
-import 'package:bwa_wallet/ui/widgets/circle_image.dart';
 import 'package:bwa_wallet/ui/widgets/profile_menu.dart';
 import 'package:flutter/material.dart';
 
@@ -10,24 +9,15 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: lightBgColor,
         appBar: AppBar(
-            title: Text(
-              'My Profile',
-              style:
-                  blackTextStyle.copyWith(fontSize: 20, fontWeight: semiBold),
-            ),
-            backgroundColor: lightBgColor,
-            centerTitle: true,
-            elevation: 0,
-            iconTheme: IconThemeData(
-              color: blackColor,
-            )),
+            title: const Text(
+          'My Profile',
+        )),
         body: ListView(
           padding: const EdgeInsets.symmetric(horizontal: 24),
           children: [
             Container(
-              margin: const EdgeInsets.only(top: 40),
+              margin: const EdgeInsets.only(top: 30),
               padding: const EdgeInsets.symmetric(vertical: 22, horizontal: 30),
               decoration: BoxDecoration(
                   color: whiteColor, borderRadius: BorderRadius.circular(20)),
@@ -43,15 +33,15 @@ class ProfilePage extends StatelessWidget {
                       child: Align(
                         alignment: Alignment.topRight,
                         child: Container(
-                          width: 16,
-                          height: 16,
+                          width: 28,
+                          height: 28,
                           decoration: BoxDecoration(
                               shape: BoxShape.circle, color: whiteColor),
                           child: Center(
                             child: Icon(
                               Icons.check_circle,
                               color: greenColor,
-                              size: 18,
+                              size: 24,
                             ),
                           ),
                         ),

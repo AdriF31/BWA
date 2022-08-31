@@ -1,3 +1,4 @@
+import 'package:bwa_wallet/shared/theme.dart';
 import 'package:bwa_wallet/ui/pages/home_page.dart';
 import 'package:bwa_wallet/ui/pages/onboarding_page.dart';
 import 'package:bwa_wallet/ui/pages/profile_page.dart';
@@ -27,14 +28,22 @@ class MyApp extends StatelessWidget {
         '/sign-up-set-profile': (context) => const SignUpSetProfile(),
         '/sign-up-verify-id': (context) => const SignUpVerifyId(),
         '/sign-up-success': (context) => const SignUpSuccessPage(),
-        '/home':(context)=>const HomePage(),
-        '/profile':(context)=>const ProfilePage()
+        '/home': (context) => const HomePage(),
+        '/profile': (context) => const ProfilePage()
       },
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+          scaffoldBackgroundColor: lightBgColor,
+          appBarTheme: AppBarTheme(
+              backgroundColor: lightBgColor,
+              centerTitle: true,
+              elevation: 0,
+              iconTheme: IconThemeData(
+                color: blackColor,
+              ),
+              titleTextStyle:
+                  blackTextStyle.copyWith(fontSize: 20, fontWeight: semiBold))),
     );
   }
 }
