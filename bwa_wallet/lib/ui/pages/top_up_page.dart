@@ -9,7 +9,7 @@ class TopUpPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Top Up')),
+      appBar: AppBar(title: const Text('Top Up')),
       body: ListView(
         padding: const EdgeInsets.symmetric(
           horizontal: 24,
@@ -34,6 +34,7 @@ class TopUpPage extends StatelessWidget {
                     width: 16,
                   ),
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         '8008 2208 1996',

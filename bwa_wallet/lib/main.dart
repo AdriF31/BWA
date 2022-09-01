@@ -15,6 +15,9 @@ import 'package:bwa_wallet/ui/pages/sign_up_verify_id.dart';
 import 'package:bwa_wallet/ui/pages/top_up_amount_page.dart';
 import 'package:bwa_wallet/ui/pages/top_up_page.dart';
 import 'package:bwa_wallet/ui/pages/top_up_success.dart';
+import 'package:bwa_wallet/ui/pages/transfer_amount_page.dart';
+import 'package:bwa_wallet/ui/pages/transfer_page.dart';
+import 'package:bwa_wallet/ui/pages/transfer_success_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -44,6 +47,9 @@ class MyApp extends StatelessWidget {
         '/top-up': (context) => const TopUpPage(),
         '/top-up-amount': (context) => const TopUpAmountPage(),
         '/top-up-success': (context) => const TopUpSuccessPage(),
+        '/transfer': (context) => const TransferPage(),
+        '/transfer-amount': (context) => const TransferAmountPage(),
+        '/transfer-success': (context) => const TransferSuccessPage(),
       },
       debugShowCheckedModeBanner: false,
       title: 'E wallet',

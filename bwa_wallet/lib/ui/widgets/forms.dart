@@ -7,13 +7,15 @@ class CustomFormField extends StatelessWidget {
   final TextEditingController? controller;
   final TextInputType inputType;
   final int? maxLength;
+  final bool isShowTitle;
   const CustomFormField(
       {Key? key,
       required this.title,
       this.isPassword = false,
       this.controller,
       this.inputType = TextInputType.emailAddress,
-      this.maxLength})
+      this.maxLength,
+      this.isShowTitle = true})
       : super(key: key);
 
   @override
@@ -21,16 +23,19 @@ class CustomFormField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          title,
-          style: blackTextStyle.copyWith(fontSize: 14, fontWeight: medium),
-        ),
-        const SizedBox(
-          height: 8,
-        ),
+        isShowTitle == true
+            ? Text(
+                title,
+                style:
+                    blackTextStyle.copyWith(fontSize: 14, fontWeight: medium),
+              )
+            : const SizedBox(
+                height: 8,
+              ),
         TextFormField(
           controller: controller,
           decoration: InputDecoration(
+              hintText: isShowTitle == false ? title : '',
               border:
                   OutlineInputBorder(borderRadius: BorderRadius.circular(14)),
               contentPadding: const EdgeInsets.all(12)),
