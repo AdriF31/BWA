@@ -12,7 +12,9 @@ import 'package:bwa_wallet/ui/pages/sign_up_success.dart';
 import 'package:bwa_wallet/ui/pages/splash_screen.dart';
 import 'package:bwa_wallet/ui/pages/sign_up_set_profile.dart';
 import 'package:bwa_wallet/ui/pages/sign_up_verify_id.dart';
+import 'package:bwa_wallet/ui/pages/top_up_amount_page.dart';
 import 'package:bwa_wallet/ui/pages/top_up_page.dart';
+import 'package:bwa_wallet/ui/pages/top_up_success.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -40,9 +42,11 @@ class MyApp extends StatelessWidget {
         '/edit-pin': (context) => const EditPinPage(),
         '/edit-profile-success': (context) => const ProfileEditSuccessPage(),
         '/top-up': (context) => const TopUpPage(),
+        '/top-up-amount': (context) => const TopUpAmountPage(),
+        '/top-up-success': (context) => const TopUpSuccessPage(),
       },
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'E wallet',
       theme: ThemeData(
           scaffoldBackgroundColor: lightBgColor,
           appBarTheme: AppBarTheme(

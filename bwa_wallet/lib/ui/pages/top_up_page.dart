@@ -1,10 +1,7 @@
 import 'package:bwa_wallet/shared/theme.dart';
 import 'package:bwa_wallet/ui/widgets/buttons.dart';
-import 'package:bwa_wallet/ui/widgets/home_service_item.dart';
 import 'package:bwa_wallet/ui/widgets/select_bank.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class TopUpPage extends StatelessWidget {
   const TopUpPage({Key? key}) : super(key: key);
@@ -69,33 +66,26 @@ class TopUpPage extends StatelessWidget {
                   image: 'assets/img_bank_bca.png',
                   title: 'BANK BCA',
                   time: '50 mins'),
-              const SizedBox(
-                height: 18,
-              ),
               const SelectBank(
                   image: 'assets/img_bank_bni.png',
                   title: 'Bank BNI',
                   time: '50 mins'),
-              const SizedBox(
-                height: 18,
-              ),
               const SelectBank(
                   image: 'assets/img_bank_mandiri.png',
                   title: 'Bank Mandiri',
                   time: '50 mins'),
-              const SizedBox(
-                height: 18,
-              ),
               const SelectBank(
                   image: 'assets/img_bank_ocbc.png',
                   title: 'Bank OCBC',
                   time: '50 mins'),
               const SizedBox(
-                height: 30,
+                height: 12,
               ),
               CustomFilledButton(
                 title: 'Continue',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/top-up-amount');
+                },
               ),
               const SizedBox(
                 height: 30,
