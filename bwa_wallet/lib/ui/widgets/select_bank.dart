@@ -1,16 +1,16 @@
 import 'package:bwa_wallet/shared/theme.dart';
 import 'package:flutter/material.dart';
 
-class SelectBank extends StatelessWidget {
+class SelectCard extends StatelessWidget {
   final String image;
   final String title;
-  final String time;
+  final String subtitle;
   final bool? isSelected;
-  const SelectBank(
+  const SelectCard(
       {Key? key,
       required this.image,
       required this.title,
-      required this.time,
+      required this.subtitle,
       this.isSelected = false})
       : super(key: key);
 
@@ -41,7 +41,7 @@ class SelectBank extends StatelessWidget {
               title,
               style: blackTextStyle.copyWith(fontSize: 16, fontWeight: medium),
             ),
-            Text(time, style: greyTextStyle.copyWith(fontSize: 12))
+            Text(subtitle, style: greyTextStyle.copyWith(fontSize: 12))
           ],
         )
       ]),

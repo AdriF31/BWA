@@ -267,7 +267,9 @@ class _HomePageState extends State<HomePage> {
           HomeServiceItem(
             title: 'More',
             icon: 'assets/ic_more.png',
-            onTap: () {},
+            onTap: () {
+              showDialog(context: context, builder: (context) => MoreDialog());
+            },
           ),
         ])
       ]),
@@ -497,5 +499,62 @@ class _HomePageState extends State<HomePage> {
             )
           ],
         ));
+  }
+}
+
+class MoreDialog extends StatelessWidget {
+  const MoreDialog({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      backgroundColor: Colors.transparent,
+      insetPadding: EdgeInsets.zero,
+      alignment: Alignment.bottomCenter,
+      content: Container(
+        width: MediaQuery.of(context).size.width,
+        height: 326,
+        margin: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
+        padding: const EdgeInsets.all(30),
+        decoration: BoxDecoration(
+            color: lightBgColor, borderRadius: BorderRadius.circular(40)),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Do More With Us',
+              style:
+                  blackTextStyle.copyWith(fontSize: 16, fontWeight: semiBold),
+            ),
+            const SizedBox(
+              height: 13,
+            ),
+            Wrap(
+              spacing: 10,
+              runSpacing: 25,
+              children: [
+                HomeServiceItem(
+                  title: 'Data',
+                  icon: 'assets/ic_product_data.png',
+                  onTap: () {
+                    Navigator.pushNamed(context, '/data');
+                  },
+                ),
+                HomeServiceItem(
+                    title: 'Water', icon: 'assets/ic_product_water.png'),
+                HomeServiceItem(
+                    title: 'Stream', icon: 'assets/ic_product_stream.png'),
+                HomeServiceItem(
+                    title: 'Movie', icon: 'assets/ic_product_movie.png'),
+                HomeServiceItem(
+                    title: 'Food', icon: 'assets/ic_product_food.png'),
+                HomeServiceItem(
+                    title: 'Travel', icon: 'assets/ic_product_travel.png'),
+              ],
+            )
+          ],
+        ),
+      ),
+    );
   }
 }

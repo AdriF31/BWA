@@ -3,13 +3,13 @@ import 'package:bwa_wallet/ui/widgets/buttons.dart';
 import 'package:bwa_wallet/ui/widgets/select_bank.dart';
 import 'package:flutter/material.dart';
 
-class TopUpPage extends StatelessWidget {
-  const TopUpPage({Key? key}) : super(key: key);
+class DataProviderPage extends StatelessWidget {
+  const DataProviderPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Top Up')),
+      appBar: AppBar(title: Text('Beli Data')),
       body: ListView(
         padding: const EdgeInsets.symmetric(
           horizontal: 24,
@@ -42,7 +42,7 @@ class TopUpPage extends StatelessWidget {
                             fontSize: 16, fontWeight: medium),
                       ),
                       Text(
-                        'Adray',
+                        'Balance Rp 190.000.000',
                         style: greyTextStyle.copyWith(fontSize: 12),
                       )
                     ],
@@ -56,7 +56,7 @@ class TopUpPage extends StatelessWidget {
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Text(
-                'Select Bank',
+                'Select Provider',
                 style:
                     blackTextStyle.copyWith(fontSize: 16, fontWeight: semiBold),
               ),
@@ -64,21 +64,17 @@ class TopUpPage extends StatelessWidget {
                 height: 14,
               ),
               const SelectCard(
-                  image: 'assets/img_bank_bca.png',
-                  title: 'BANK BCA',
-                  subtitle: '50 mins'),
+                  image: 'assets/img_provider_telkomsel.png',
+                  title: 'Telkomsel',
+                  subtitle: 'Available'),
               const SelectCard(
-                  image: 'assets/img_bank_bni.png',
-                  title: 'Bank BNI',
-                  subtitle: '50 mins'),
+                  image: 'assets/img_provider_indosat.png',
+                  title: 'Indosat',
+                  subtitle: 'Available'),
               const SelectCard(
-                  image: 'assets/img_bank_mandiri.png',
-                  title: 'Bank Mandiri',
-                  subtitle: '50 mins'),
-              const SelectCard(
-                  image: 'assets/img_bank_ocbc.png',
-                  title: 'Bank OCBC',
-                  subtitle: '50 mins'),
+                  image: 'assets/img_provider_singtel.png',
+                  title: 'Singtel',
+                  subtitle: 'Available'),
               const SizedBox(
                 height: 12,
               ),
