@@ -1,4 +1,6 @@
 import 'package:bwa_wallet/shared/theme.dart';
+import 'package:bwa_wallet/ui/pages/data_package_page.dart';
+import 'package:bwa_wallet/ui/pages/data_package_success_page.dart';
 import 'package:bwa_wallet/ui/pages/data_provider_page.dart';
 import 'package:bwa_wallet/ui/pages/edit_pin_page.dart';
 import 'package:bwa_wallet/ui/pages/edit_profile_page.dart';
@@ -52,6 +54,8 @@ class MyApp extends StatelessWidget {
         '/transfer-amount': (context) => const TransferAmountPage(),
         '/transfer-success': (context) => const TransferSuccessPage(),
         '/data': (context) => const DataProviderPage(),
+        '/data-package': (context) => const DataPackagePage(),
+        '/data-package-success': (context) => const DataPackageSuccessPage(),
       },
       debugShowCheckedModeBanner: false,
       title: 'E wallet',

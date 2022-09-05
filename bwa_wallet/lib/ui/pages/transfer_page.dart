@@ -12,7 +12,7 @@ class TransferPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Transfer'),
+        title: const Text('Transfer'),
       ),
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 30),
@@ -76,13 +76,14 @@ class TransferPage extends StatelessWidget {
           Wrap(
             spacing: 17,
             runSpacing: 17,
-            children: [
+            children: const [
               TransferResultUserItem(
                 name: 'Adri',
                 username: 'Adray',
                 imageUrl: 'assets/img_friend1.png',
                 isVerified: true,
                 isSelected: true,
+                
               ),
               TransferResultUserItem(
                   name: 'Adri',

@@ -1,6 +1,6 @@
 import 'package:bwa_wallet/shared/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 
 class TransferRecentUserItem extends StatelessWidget {
   final String imageUrl;
@@ -58,7 +58,7 @@ class TransferRecentUserItem extends StatelessWidget {
                     size: 14,
                     color: greenColor,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 4,
                   ),
                   Text(

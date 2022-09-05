@@ -1,3 +1,4 @@
+import 'package:bwa_wallet/shared/shared_methods.dart';
 import 'package:bwa_wallet/shared/theme.dart';
 import 'package:bwa_wallet/ui/widgets/buttons.dart';
 import 'package:flutter/material.dart';
@@ -18,8 +19,14 @@ class _PinPageState extends State<PinPage> {
         _pinController.text = _pinController.text + number;
       });
     }
-    if (_pinController.text == '121212') {
-      Navigator.pop(context, true);
+    if (_pinController.text.length == 6) {
+      if (_pinController.text == '121212') {
+        Navigator.pop(context, true);
+      } else {
+        showCustomSnackbar(
+            context, 'PIN yang anda masukkan salah, silahkan coba lagi');
+        _pinController.text = '';
+      }
     }
   }
 

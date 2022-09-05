@@ -3,13 +3,19 @@ import 'package:bwa_wallet/ui/widgets/buttons.dart';
 import 'package:bwa_wallet/ui/widgets/select_bank.dart';
 import 'package:flutter/material.dart';
 
-class DataProviderPage extends StatelessWidget {
+class DataProviderPage extends StatefulWidget {
   const DataProviderPage({Key? key}) : super(key: key);
 
   @override
+  State<DataProviderPage> createState() => _DataProviderPageState();
+}
+
+class _DataProviderPageState extends State<DataProviderPage> {
+  bool isSelected = false;
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Beli Data')),
+      appBar: AppBar(title: const Text('Beli Data')),
       body: ListView(
         padding: const EdgeInsets.symmetric(
           horizontal: 24,
@@ -63,27 +69,34 @@ class DataProviderPage extends StatelessWidget {
               const SizedBox(
                 height: 14,
               ),
-              const SelectCard(
+              SelectCard(
                   image: 'assets/img_provider_telkomsel.png',
                   title: 'Telkomsel',
-                  subtitle: 'Available'),
-              const SelectCard(
+                  subtitle: 'Available',
+                  onTap: () {
+                    setState(() {});
+                  }),
+              SelectCard(
                   image: 'assets/img_provider_indosat.png',
                   title: 'Indosat',
-                  subtitle: 'Available'),
-              const SelectCard(
-                  image: 'assets/img_provider_singtel.png',
-                  title: 'Singtel',
-                  subtitle: 'Available'),
+                  subtitle: 'Available',
+                  onTap: () {
+                    setState(() {});
+                  }),
+              SelectCard(
+                image: 'assets/img_provider_singtel.png',
+                title: 'Singtel',
+                subtitle: 'Available',
+                onTap: () {},
+              ),
               const SizedBox(
                 height: 12,
               ),
               CustomFilledButton(
-                title: 'Continue',
-                onPressed: () {
-                  Navigator.pushNamed(context, '/top-up-amount');
-                },
-              ),
+                  title: 'Continue',
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/data-package');
+                  }),
               const SizedBox(
                 height: 30,
               ),

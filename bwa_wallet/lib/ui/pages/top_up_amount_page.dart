@@ -93,83 +93,85 @@ class _TopUpAmountPageState extends State<TopUpAmountPage> {
               const SizedBox(
                 height: 50,
               ),
-              Wrap(
-                spacing: 40,
-                runSpacing: 40,
-                children: [
-                  CustomInputButton(
-                      title: '1',
-                      onTap: () {
-                        addAmount('1');
-                      }),
-                  CustomInputButton(
-                      title: '2',
-                      onTap: () {
-                        addAmount('2');
-                      }),
-                  CustomInputButton(
-                      title: '3',
-                      onTap: () {
-                        addAmount('3');
-                      }),
-                  CustomInputButton(
-                      title: '4',
-                      onTap: () {
-                        addAmount('4');
-                      }),
-                  CustomInputButton(
-                      title: '5',
-                      onTap: () {
-                        addAmount('5');
-                      }),
-                  CustomInputButton(
-                      title: '6',
-                      onTap: () {
-                        addAmount('6');
-                      }),
-                  CustomInputButton(
-                      title: '7',
-                      onTap: () {
-                        addAmount('7');
-                      }),
-                  CustomInputButton(
-                      title: '8',
-                      onTap: () {
-                        addAmount('8');
-                      }),
-                  CustomInputButton(
-                      title: '9',
-                      onTap: () {
-                        addAmount('9');
-                      }),
-                  const SizedBox(
-                    height: 60,
-                    width: 60,
-                  ),
-                  CustomInputButton(
-                      title: '0',
-                      onTap: () {
-                        addAmount('0');
-                      }),
-                  GestureDetector(
-                    onTap: () {
-                      deleteAmount();
-                    },
-                    child: Container(
-                      width: 60,
+              Center(
+                child: Wrap(
+                  spacing: 40,
+                  runSpacing: 40,
+                  children: [
+                    CustomInputButton(
+                        title: '1',
+                        onTap: () {
+                          addAmount('1');
+                        }),
+                    CustomInputButton(
+                        title: '2',
+                        onTap: () {
+                          addAmount('2');
+                        }),
+                    CustomInputButton(
+                        title: '3',
+                        onTap: () {
+                          addAmount('3');
+                        }),
+                    CustomInputButton(
+                        title: '4',
+                        onTap: () {
+                          addAmount('4');
+                        }),
+                    CustomInputButton(
+                        title: '5',
+                        onTap: () {
+                          addAmount('5');
+                        }),
+                    CustomInputButton(
+                        title: '6',
+                        onTap: () {
+                          addAmount('6');
+                        }),
+                    CustomInputButton(
+                        title: '7',
+                        onTap: () {
+                          addAmount('7');
+                        }),
+                    CustomInputButton(
+                        title: '8',
+                        onTap: () {
+                          addAmount('8');
+                        }),
+                    CustomInputButton(
+                        title: '9',
+                        onTap: () {
+                          addAmount('9');
+                        }),
+                    const SizedBox(
                       height: 60,
-                      decoration: BoxDecoration(
-                          shape: BoxShape.circle, color: numberBgColor),
-                      child: Center(
-                        child: Icon(
-                          Icons.arrow_back,
-                          size: 24,
-                          color: whiteColor,
+                      width: 60,
+                    ),
+                    CustomInputButton(
+                        title: '0',
+                        onTap: () {
+                          addAmount('0');
+                        }),
+                    GestureDetector(
+                      onTap: () {
+                        deleteAmount();
+                      },
+                      child: Container(
+                        width: 60,
+                        height: 60,
+                        decoration: BoxDecoration(
+                            shape: BoxShape.circle, color: numberBgColor),
+                        child: Center(
+                          child: Icon(
+                            Icons.arrow_back,
+                            size: 24,
+                            color: whiteColor,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               const SizedBox(
                 height: 40,

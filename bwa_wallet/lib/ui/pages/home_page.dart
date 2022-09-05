@@ -1,3 +1,4 @@
+import 'package:bwa_wallet/shared/shared_methods.dart';
 import 'package:bwa_wallet/shared/theme.dart';
 import 'package:bwa_wallet/ui/pages/history_page.dart';
 import 'package:bwa_wallet/ui/pages/reward_page.dart';
@@ -183,7 +184,7 @@ class _HomePageState extends State<HomePage> {
             height: 21,
           ),
           Text('Balance', style: whiteTextStyle),
-          Text('Rp 2000000',
+          Text(formatCurrency(20000),
               style:
                   whiteTextStyle.copyWith(fontSize: 24, fontWeight: semiBold)),
         ],
@@ -268,7 +269,8 @@ class _HomePageState extends State<HomePage> {
             title: 'More',
             icon: 'assets/ic_more.png',
             onTap: () {
-              showDialog(context: context, builder: (context) => MoreDialog());
+              showDialog(
+                  context: context, builder: (context) => const MoreDialog());
             },
           ),
         ])
@@ -292,35 +294,33 @@ class _HomePageState extends State<HomePage> {
           height: 350,
           decoration: BoxDecoration(
               color: whiteColor, borderRadius: BorderRadius.circular(20)),
-          child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                HomeLatestTransaction(
-                    icon: 'assets/ic_transaction_cat1.png',
-                    transaction: 'Top Up',
-                    date: 'Yesterday',
-                    number: '+ 450.000'),
-                HomeLatestTransaction(
-                    icon: 'assets/ic_transaction_cat2.png',
-                    transaction: 'Cashback',
-                    date: 'Sep 11',
-                    number: '+ 22.000'),
-                HomeLatestTransaction(
-                    icon: 'assets/ic_transaction_cat3.png',
-                    transaction: 'Withdraw',
-                    date: 'Sep 2',
-                    number: '- 50.000'),
-                HomeLatestTransaction(
-                    icon: 'assets/ic_transaction_cat4.png',
-                    transaction: 'Transfer',
-                    date: 'Aug 27',
-                    number: '- 4.500.000'),
-                HomeLatestTransaction(
-                    icon: 'assets/ic_transaction_cat5.png',
-                    transaction: 'Electric',
-                    date: 'Feb 18',
-                    number: '- 500.000'),
-              ]),
+          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+            HomeLatestTransaction(
+                icon: 'assets/ic_transaction_cat1.png',
+                transaction: 'Top Up',
+                date: 'Yesterday',
+                number: '+ ${formatCurrency(45000, symbol: '')}'),
+            HomeLatestTransaction(
+                icon: 'assets/ic_transaction_cat2.png',
+                transaction: 'Cashback',
+                date: 'Sep 11',
+                number: '+ ${formatCurrency(45000, symbol: '')}'),
+            HomeLatestTransaction(
+                icon: 'assets/ic_transaction_cat3.png',
+                transaction: 'Withdraw',
+                date: 'Sep 2',
+                number: '- ${formatCurrency(45000, symbol: '')}'),
+            HomeLatestTransaction(
+                icon: 'assets/ic_transaction_cat4.png',
+                transaction: 'Transfer',
+                date: 'Aug 27',
+                number: '- ${formatCurrency(450000, symbol: '')}'),
+            HomeLatestTransaction(
+                icon: 'assets/ic_transaction_cat5.png',
+                transaction: 'Electric',
+                date: 'Feb 18',
+                number: '- ${formatCurrency(4500000, symbol: '')}'),
+          ]),
         )
       ]),
     );
@@ -529,28 +529,45 @@ class MoreDialog extends StatelessWidget {
             const SizedBox(
               height: 13,
             ),
-            Wrap(
-              spacing: 10,
-              runSpacing: 25,
-              children: [
-                HomeServiceItem(
-                  title: 'Data',
-                  icon: 'assets/ic_product_data.png',
-                  onTap: () {
-                    Navigator.pushNamed(context, '/data');
-                  },
-                ),
-                HomeServiceItem(
-                    title: 'Water', icon: 'assets/ic_product_water.png'),
-                HomeServiceItem(
-                    title: 'Stream', icon: 'assets/ic_product_stream.png'),
-                HomeServiceItem(
-                    title: 'Movie', icon: 'assets/ic_product_movie.png'),
-                HomeServiceItem(
-                    title: 'Food', icon: 'assets/ic_product_food.png'),
-                HomeServiceItem(
-                    title: 'Travel', icon: 'assets/ic_product_travel.png'),
-              ],
+            Center(
+              child: Wrap(
+                spacing: 40,
+                runSpacing: 25,
+                children: [
+                  HomeServiceItem(
+                    title: 'Data',
+                    icon: 'assets/ic_product_data.png',
+                    onTap: () {
+                      Navigator.pushNamed(context, '/data');
+                    },
+                  ),
+                  HomeServiceItem(
+                    title: 'Water',
+                    icon: 'assets/ic_product_water.png',
+                    onTap: () {},
+                  ),
+                  HomeServiceItem(
+                    title: 'Stream',
+                    icon: 'assets/ic_product_stream.png',
+                    onTap: () {},
+                  ),
+                  HomeServiceItem(
+                    title: 'Movie',
+                    icon: 'assets/ic_product_movie.png',
+                    onTap: () {},
+                  ),
+                  HomeServiceItem(
+                    title: 'Food',
+                    icon: 'assets/ic_product_food.png',
+                    onTap: () {},
+                  ),
+                  HomeServiceItem(
+                    title: 'Travel',
+                    icon: 'assets/ic_product_travel.png',
+                    onTap: () {},
+                  ),
+                ],
+              ),
             )
           ],
         ),
