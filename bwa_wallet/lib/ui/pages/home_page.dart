@@ -471,8 +471,8 @@ class _HomePageState extends State<HomePage> {
             Container(
               margin: const EdgeInsets.only(top: 18),
               child: Wrap(
-                spacing: 17,
-                runSpacing: 18,
+                spacing: 40,
+                runSpacing: 20,
                 children: [
                   HomeFriendlyTips(
                     image: 'assets/img_tips1.png',

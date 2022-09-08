@@ -13,6 +13,7 @@ class HomeFriendlyTips extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var mediaQuery = MediaQuery.of(context).size;
     return GestureDetector(
       onTap: () async {
         if (await launchUrl(url)) {
@@ -22,8 +23,8 @@ class HomeFriendlyTips extends StatelessWidget {
       child: ClipRRect(
         borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
         child: Container(
-          width: 155,
-          height: 176,
+          width: mediaQuery.width * 0.4,
+          height: mediaQuery.height * 0.24,
           decoration: BoxDecoration(
             color: whiteColor,
             borderRadius: BorderRadius.circular(20),
@@ -31,7 +32,7 @@ class HomeFriendlyTips extends StatelessWidget {
           child: Column(children: [
             Image.asset(
               image,
-              width: 155,
+              width: double.infinity,
               height: 110,
               fit: BoxFit.cover,
             ),

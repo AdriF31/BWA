@@ -17,6 +17,7 @@ class CustomCircleImage extends StatelessWidget {
       decoration: BoxDecoration(
         color: lightGreyColor,
         shape: BoxShape.circle,
+        
       ),
       child: Center(
           child: Image.asset(

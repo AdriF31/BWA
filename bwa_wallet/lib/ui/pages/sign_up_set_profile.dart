@@ -1,17 +1,28 @@
+import 'package:bwa_wallet/models/sign_up_form_model.dart';
+import 'package:bwa_wallet/shared/shared_methods.dart';
 import 'package:bwa_wallet/shared/theme.dart';
 import 'package:bwa_wallet/ui/widgets/buttons.dart';
 import 'package:bwa_wallet/ui/widgets/circle_image.dart';
 import 'package:bwa_wallet/ui/widgets/forms.dart';
 import 'package:bwa_wallet/ui/widgets/minor.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
-class SignUpSetProfile extends StatelessWidget {
-  const SignUpSetProfile({Key? key}) : super(key: key);
+class SignUpSetProfile extends StatefulWidget {
+  final SignUpFormModel data;
+  const SignUpSetProfile({Key? key, required this.data}) : super(key: key);
 
+  @override
+  State<SignUpSetProfile> createState() => _SignUpSetProfileState();
+}
+
+class _SignUpSetProfileState extends State<SignUpSetProfile> {
+  final pinController = TextEditingController(text: '');
+  XFile? selectedImage;
+  selecImage() {}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 24),
         children: [
@@ -32,7 +43,12 @@ class SignUpSetProfile extends StatelessWidget {
                 Column(
                   children: [
                     InkWell(
-                        onTap: () {},
+                        onTap: () async {
+                          final image = await selectImage();
+                          setState(() {
+                            selectedImage = image;
+                          });
+                        },
                         child: const CustomCircleImage(
                           image: 'assets/ic_upload.png',
                         )),
@@ -49,11 +65,12 @@ class SignUpSetProfile extends StatelessWidget {
                 const SizedBox(
                   height: 16,
                 ),
-                const CustomFormField(
+                CustomFormField(
                   title: 'Set PIN (6 digit number)',
                   isPassword: true,
                   inputType: TextInputType.number,
                   maxLength: 6,
+                  controller: pinController,
                 ),
                 const SizedBox(
                   height: 30,
