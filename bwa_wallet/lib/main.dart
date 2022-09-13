@@ -14,7 +14,6 @@ import 'package:bwa_wallet/ui/pages/sign_in_page.dart';
 import 'package:bwa_wallet/ui/pages/sign_up_page.dart';
 import 'package:bwa_wallet/ui/pages/sign_up_success.dart';
 import 'package:bwa_wallet/ui/pages/splash_screen.dart';
-import 'package:bwa_wallet/ui/pages/sign_up_verify_id.dart';
 import 'package:bwa_wallet/ui/pages/top_up_amount_page.dart';
 import 'package:bwa_wallet/ui/pages/top_up_page.dart';
 import 'package:bwa_wallet/ui/pages/top_up_success.dart';
@@ -41,7 +40,7 @@ class MyApp extends StatelessWidget {
           '/onboarding': (context) => const OnBoardingPage(),
           '/sign-in': (context) => const SignInPage(),
           '/sign-up': (context) => const SignUpPage(),
-          '/sign-up-verify-id': (context) => const SignUpVerifyId(),
+         
           '/sign-up-success': (context) => const SignUpSuccessPage(),
           '/home': (context) => const HomePage(),
           '/profile': (context) => const ProfilePage(),

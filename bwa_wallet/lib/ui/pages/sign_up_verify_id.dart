@@ -1,15 +1,35 @@
+import 'dart:io';
+
+import 'package:bwa_wallet/models/sign_up_form_model.dart';
+import 'package:bwa_wallet/shared/shared_methods.dart';
 import 'package:bwa_wallet/shared/theme.dart';
 import 'package:bwa_wallet/ui/widgets/buttons.dart';
 import 'package:bwa_wallet/ui/widgets/minor.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
-class SignUpVerifyId extends StatelessWidget {
-  const SignUpVerifyId({Key? key}) : super(key: key);
+class SignUpVerifyId extends StatefulWidget {
+  final SignUpFormModel data;
+  const SignUpVerifyId({Key? key, required this.data}) : super(key: key);
+
+  @override
+  State<SignUpVerifyId> createState() => _SignUpVerifyIdState();
+}
+
+class _SignUpVerifyIdState extends State<SignUpVerifyId> {
+  XFile? selectedImage;
+
+  bool validate() {
+    if (selectedImage == null) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 24),
         children: [
@@ -30,19 +50,37 @@ class SignUpVerifyId extends StatelessWidget {
                 Column(
                   children: [
                     InkWell(
-                      onTap: () {},
+                      onTap: () async {
+                        final image = await selectImage();
+                        setState(() {
+                          selectedImage = image;
+                        });
+                      },
                       child: Container(
                         width: 120,
                         height: 120,
                         decoration: BoxDecoration(
-                          color: lightGreyColor,
                           shape: BoxShape.circle,
+                          color: lightBgColor,
+                          image: selectedImage == null
+                              ? null
+                              : DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: FileImage(
+                                    File(
+                                      selectedImage!.path,
+                                    ),
+                                  ),
+                                ),
                         ),
-                        child: Center(
-                            child: Image.asset(
-                          'assets/ic_upload.png',
-                          width: 32,
-                        )),
+                        child: selectedImage != null
+                            ? null
+                            : Center(
+                                child: Image.asset(
+                                  'assets/ic_upload.png',
+                                  width: 32,
+                                ),
+                              ),
                       ),
                     ),
                     const SizedBox(
@@ -61,6 +99,11 @@ class SignUpVerifyId extends StatelessWidget {
                 CustomFilledButton(
                   title: 'Continue',
                   onPressed: () {
+                    if(validate()){
+
+                    }else{
+                      
+                    }
                     Navigator.pushNamed(context, '/sign-up-success');
                   },
                 )

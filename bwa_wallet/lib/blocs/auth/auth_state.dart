@@ -17,6 +17,13 @@ class AuthFailed extends AuthState {
   @override
   List<Object> get props => [e];
 }
-class AuthCheckEmailSuccess extends AuthState{
-  
+
+class AuthCheckEmailSuccess extends AuthState {}
+
+class AuthSuccess extends AuthState {
+  final UserModel data;
+  const AuthSuccess(this.data);
+  @override
+
+  List<Object> get props => [data];
 }
